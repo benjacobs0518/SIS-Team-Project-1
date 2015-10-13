@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.*;
 import java.util.Scanner;
 import java.io.IOException;
-public class Reader
+public class Student
 	{
 
 		
@@ -17,8 +17,8 @@ public class Reader
 		private static double GPA;
 		
 		
-		static ArrayList<Reader> students = new ArrayList<Reader>();
-		public Reader(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, double g)
+		static ArrayList<Student> students = new ArrayList<Student>();
+		public Student(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, double g)
 		{
 			fn=fName;
 			ln=lName;
@@ -118,7 +118,7 @@ public class Reader
 			class3=file.next();
 			grade3=file.next();
 			
-			students.add(new Reader(fName, lName, class1, grade1, class2, grade2, class3, grade3, GPA));
+			students.add(new Student(fName, lName, class1, grade1, class2, grade2, class3, grade3, GPA));
 		
 			}
 		file.close();

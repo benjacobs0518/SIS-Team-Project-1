@@ -1,35 +1,15 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class LastName1
+public class LastName1 implements Comparator<Student>
 	{
-
 		
-		public static void main(String[] args) throws IOException
-
+		public static void sortName()
 			{
-				sortName();
-			}
-		
-		public static void sortName() throws IOException
-			{
-				Scanner file = new Scanner(new File("studentlist3.txt"));
-				//lname
-				ArrayList<String> student = new ArrayList<String>();
-				
-				
-				while (file.hasNext())
-					{
-						student.add(file.nextLine());
-						
-					}
-			
-			for (int i = 0; i < student.size(); i++)
-				{
-					System.out.println(student.get(i));
-				}
 				
 			}
 	}
+	
