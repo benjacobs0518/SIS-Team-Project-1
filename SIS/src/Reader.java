@@ -14,10 +14,11 @@ public class Reader
 		private static String grade2;
 		private static String class3;
 		private static String grade3;
+		private static double GPA;
 		
 		
 		static ArrayList<Reader> students = new ArrayList<Reader>();
-		public Reader(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3)
+		public Reader(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, double g)
 		{
 			fn=fName;
 			ln=lName;
@@ -27,6 +28,7 @@ public class Reader
 			g2=grade2;
 			c3=class3;
 			g3=grade3;
+			g=GPA;
 			
 		}
 		public String getfName()
@@ -93,6 +95,14 @@ public class Reader
 			{
 				this.grade3 = grade3;
 			}
+		public double GPA()
+			{
+				return GPA;
+			}
+		public void setGPA(double GPA)
+			{
+				this.GPA = GPA;
+			}
 		
 		public static void reader() throws IOException
 		{
@@ -107,7 +117,8 @@ public class Reader
 			grade2=file.next();
 			class3=file.next();
 			grade3=file.next();
-			students.add(new Reader(fName, lName, class1, grade1, class2, grade2, class3, grade3));
+			
+			students.add(new Reader(fName, lName, class1, grade1, class2, grade2, class3, grade3, GPA));
 		
 			}
 		file.close();
