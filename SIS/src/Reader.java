@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.*;
 import java.util.Scanner;
 import java.io.IOException;
 public class Reader
@@ -15,7 +16,7 @@ public class Reader
 		private static String grade3;
 		
 		
-		
+		static ArrayList<Reader> students = new ArrayList<Reader>();
 		public Reader(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3)
 		{
 			fn=fName;
@@ -92,6 +93,7 @@ public class Reader
 			{
 				this.grade3 = grade3;
 			}
+		
 		public static void reader() throws IOException
 		{
 		Scanner file = new Scanner(new File("studentlist3.txt"));
@@ -105,7 +107,7 @@ public class Reader
 			grade2=file.next();
 			class3=file.next();
 			grade3=file.next();
-		
+			students.add(new Reader(fName, lName, class1, grade1, class2, grade2, class3, grade3));
 		
 			}
 		file.close();
