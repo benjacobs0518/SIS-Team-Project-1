@@ -5,14 +5,14 @@ public class Reader
 	{
 
 		
-		private String fName;
-		private String lName;
-		private String class1;
-		private String grade1;
-		private String class2;
-		private String grade2;
-		private String class3;
-		private String grade3;
+		private static String fName;
+		private static String lName;
+		private static String class1;
+		private static String grade1;
+		private static String class2;
+		private static String grade2;
+		private static String class3;
+		private static String grade3;
 		
 		
 		
@@ -97,14 +97,14 @@ public class Reader
 		Scanner file = new Scanner(new File("studentlist3.txt"));
 		while (file.hasNext())
 			{
-		fName=file.next();
-		lName=file.next();
-		class1=file.next();
-		grade1=file.next();
-		class2=file.next();
-		grade2=file.next();
-		class3=file.next();
-		grade3=file.next();
+			fName=file.next();
+			lName=file.next();
+			class1=file.next();
+			grade1=file.next();
+			class2=file.next();
+			grade2=file.next();
+			class3=file.next();
+			grade3=file.next();
 		
 		
 			}
