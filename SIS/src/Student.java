@@ -26,14 +26,6 @@ public class Student
 			grade3=g3;
 			GPA=g;
 			}
-		
-		
-		
-	
-		
-		
-		
-		
 	public String getfName()
 		{
 			return fName;
