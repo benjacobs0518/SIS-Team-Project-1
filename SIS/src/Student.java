@@ -20,15 +20,15 @@ public class Student
 		static ArrayList<Student> students = new ArrayList<Student>();
 		public Student(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, double g)
 		{
-			fn=fName;
-			ln=lName;
-			c1=class1;
-			g1=grade1;
-			c2=class2;
-			g2=grade2;
-			c3=class3;
-			g3=grade3;
-			g=GPA;
+			fName=fn;
+			lName=ln;
+			class1=c1;
+			grade1=g1;
+			class2=c2;
+			grade2=g2;
+			class3=c3;
+			grade3=g3;
+			GPA=g;
 			
 		}
 		public String getfName()
