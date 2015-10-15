@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class AddStudent
 	{
 	static ArrayList<String> classNames = new ArrayList<String>();
+	static ArrayList<String> classNamesEditted = new ArrayList<String>();
 	public static void main(String[] args) throws IOException
 		{
 		addStudent();
@@ -20,14 +21,13 @@ public class AddStudent
 		String addedFirst = userInput.nextLine();
 		System.out.println("Please input student last name.");
 		String addedLast = userInput.nextLine();
-		System.out.println("the students name is " + addedFirst + " " + addedLast + ".");
 		System.out.println("Please input (1) to select biology as the next period class, (2) to make english the next class, or (3) to make algebra the next class.");
-		int classInput = userInput.nextInt();
-		String newClass = classNames.get(classInput-1);
-		System.out.println(newClass);
-		classNames.remove(classInput-1);
+		int period1Input = userInput.nextInt();
 		System.out.println("Please select the next class.");
-		classInput = userInput.nextInt();
-		
+		int period2Input = userInput.nextInt();
+		System.out.println("Input the students GPA.");
+		double inputGPA = userInput.nextDouble();
+		int period3Input = 
+		Student.students.add(new Student(addedFirst, addedLast, classNames.get(period1Input), classNames.get(period2Input), classNames.), inputGPA));
 		}
 	}
