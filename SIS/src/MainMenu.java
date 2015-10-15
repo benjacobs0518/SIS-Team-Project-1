@@ -2,7 +2,11 @@ import java.util.*;
 public class MainMenu
 	{
 
-		public static void main(String[] args)
+	
+	
+	
+	
+		public static void mainMenu()
 			{
 			System.out.println("What would you like to do?");
 			System.out.println("    1) Add or delete a student");
@@ -26,7 +30,6 @@ public class MainMenu
 				{
 					System.out.println("Please restart and input a valid operator.");
 				}
-
 			}
 
 	}

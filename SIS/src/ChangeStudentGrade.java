@@ -13,9 +13,26 @@ public class ChangeStudentGrade
 		System.out.println("Whose grade would you like to change?");
 		Scanner userInput = new Scanner(System.in);
 		personChoice = userInput.nextInt()-1;
+		System.out.println("");
+		System.out.println("Select a class");
 		printStudentClasses();
 		int classChoice = userInput.nextInt()-1;
-		System.out.println("Student grade for "+Student.students.get(personChoice));
+		if(classChoice==0)
+			System.out.println("Student grade for "+Student.students.get(personChoice).getfName()+" is: "+Student.students.get(personChoice).getClass1());
+		if(classChoice==1)
+			System.out.println("Student grade for "+Student.students.get(personChoice).getfName()+" is: "+Student.students.get(personChoice).getClass2());
+		if(classChoice==2)
+			System.out.println("Student grade for "+Student.students.get(personChoice).getfName()+" is: "+Student.students.get(personChoice).getClass3());
+		
+		System.out.println("What would you like the new grade to be? Input the new grade in a single line, Ex: 'A+'");
+		String newGrade = userInput.nextLine();
+		
+		if(classChoice==0)
+			Student.students.get(personChoice).setClass1(newGrade);
+		if(classChoice==1)
+			
+		if(classChoice==2)
+		
 		}
 	public static void switchClass()
 		{
