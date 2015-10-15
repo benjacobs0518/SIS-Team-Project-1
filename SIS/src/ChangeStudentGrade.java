@@ -1,7 +1,7 @@
 import java.util.*;
 public class ChangeStudentGrade 
 {
-
+	private static int personChoice;
 	public static void main(String[] args) 
 		{
 		
@@ -9,16 +9,61 @@ public class ChangeStudentGrade
 		}
 	public static void changeGrade()
 		{
+		printStudents();
 		System.out.println("Whose grade would you like to change?");
 		Scanner userInput = new Scanner(System.in);
-		int userChoice = userInput.nextInt();
-		
+		personChoice = userInput.nextInt()-1;
+		printStudentClasses();
+		int classChoice = userInput.nextInt()-1;
+		System.out.println("Student grade for "+Reader.students.get);
 		}
 	public static void switchClass()
 		{
+		printStudents();
 		System.out.println("Whose schedule would you like to change?");
 		Scanner userInput = new Scanner(System.in);
-		int userChoice = userInput.nextInt();
+		personChoice = userInput.nextInt()-1;
+		
+		
 		}
+	public static void printStudents()
+		{
+		int counter=1;
+		for(Object fred:Reader.students)
+			{
+			System.out.println(counter+") "+Reader.students.get(personChoice).getfName()+" "+Reader.students.get(personChoice).getlName());
+			}
+		}
+	public static void printStudentClasses()
+		{
+		int counter=1;
+		System.out.println("1)"+Reader.students.get(personChoice).getClass1());
+		System.out.println("2)"+Reader.students.get(personChoice).getClass2());
+		System.out.println("3)"+Reader.students.get(personChoice).getClass3());
+
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
+
