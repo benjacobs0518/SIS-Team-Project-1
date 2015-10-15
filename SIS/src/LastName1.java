@@ -1,15 +1,16 @@
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class LastName1 implements Comparator<Student>
 	{
 		
-		public static void sortName()
+		
+
+		public int compare(Student arg0, Student arg1)
 			{
-				
-			}
+				 return arg0.getlName().compareTo(arg1.getlName());
+				}
+		
 	}
 	
