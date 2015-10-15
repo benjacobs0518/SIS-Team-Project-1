@@ -13,16 +13,16 @@ public class MainMenu
 			System.out.println("    2) Change student grades/schedule");
 			System.out.println("    3) Sort students");
 			Scanner userInput = new Scanner(System.in);
-			String in=userInput.nextLine();
-			if (in.equals("1"))
+			String menuChoice=userInput.nextLine();
+			if (menuChoice.equals("1"))
 				{
 					//go to menu for adding and deleting a student
 				}
-			if (in.equals("2"))
+			if (menuChoice.equals("2"))
 				{
 					//go to menu for student grades/schedule
 				}
-			if (in.equals("3"))
+			if (menuChoice.equals("3"))
 				{
 					//go to menu for sorting students
 				}
