@@ -10,6 +10,7 @@ public class Runner
 		{
 		reader();
 		MainMenu.mainMenu();
+		
 		}
 	public static void reader() throws IOException
 		{

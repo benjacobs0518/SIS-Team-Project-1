@@ -22,7 +22,7 @@ public class AddStudent
 		String addedFirst = userInput.nextLine();
 		System.out.println("Please input student last name.");
 		String addedLast = userInput.nextLine();
-		System.out.println("Please input (1) to select biology as the next period class, (2) to make english the next class, or (3) to make algebra the next class.");
+		System.out.println("Please input (1) to select biology, (2) to select english, or (3) to select algebra.");
 		int period1Input = userInput.nextInt();
 		System.out.println("Input the grade for this class.");
 		String grade1Input = userInput1.nextLine();
@@ -32,11 +32,14 @@ public class AddStudent
 		String grade2Input = userInput1.nextLine();
 		System.out.println("Please select the next class.");
 		int period3Input = userInput.nextInt();
-		System.out.println("Please put in a grade for " + classNames.get(period3Input));
+		System.out.println("Please put in a grade for " + classNames.get(period3Input - 1));
 		String grade3Input = userInput1.nextLine();
 		System.out.println("Input the students GPA.");
 		double inputGPA = userInput.nextDouble();
-		Runner.students.add(new Student(addedFirst, addedLast, classNames.get(period1Input), grade1Input, classNames.get(period2Input), grade2Input, classNames.get(period3Input), grade3Input, inputGPA));
-		System.out.println(Runner.students);
+		Runner.students.add(new Student(addedFirst, addedLast, classNames.get(period1Input-1), grade1Input, classNames.get(period2Input-1), grade2Input, classNames.get(period3Input-1), grade3Input, inputGPA));
 		}
+	publid static void deleteStudent()
+	{
+		
+	}
 	}
