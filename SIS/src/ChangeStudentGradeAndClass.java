@@ -6,6 +6,7 @@ public class ChangeStudentGradeAndClass
 	private static int classChoice;
 	private static int secondClassChoice;
 	private static String tempClass;
+	private static String tempClass2;
 	public static void changeGrade()
 		{
 		printStudentsNames();
@@ -14,7 +15,7 @@ public class ChangeStudentGradeAndClass
 		System.out.println();
 		Scanner userInput = new Scanner(System.in);
 		personChoice = userInput.nextInt()-1;
-		if(personChoice>Runner.students.size()||personChoice<0)
+		if(personChoice>Runner.students.size()-1||personChoice<0)
 			{
 			System.out.println("Not a valid student, please start from the beginning");
 			changeGrade();
@@ -27,7 +28,8 @@ public class ChangeStudentGradeAndClass
 		classChoice = userInput.nextInt()-1;
 		if(classChoice>3||classChoice<1)
 			{
-			System.out.println("Not a valid class, please start from the ");
+			System.out.println("Not a valid class, please start from the beginning");
+			changeGrade();
 			}
 		verifyNewGrade();
 		if(classChoice==0)
@@ -58,6 +60,7 @@ public class ChangeStudentGradeAndClass
 		personChoice = userInput.nextInt()-1;
 		printStudentClassesNoGrades();
 		verifyNewClass();
+		System.out.println("Upgraded schedule");
 		printStudentClassesNoGrades();
 		runOrReturnSchedule();
 		}
@@ -148,7 +151,7 @@ public class ChangeStudentGradeAndClass
 		System.out.println("Currently modifying "+Runner.students.get(personChoice).getfName());
 		System.out.println("Choose a class and then another class to switch them");
 		Scanner userInput = new Scanner(System.in);
-		classChoice = userInput.nextInt()-1;
+		classChoice = userInput.nextInt();
 		
 		if(classChoice>3||classChoice<1)
 			{
@@ -193,22 +196,59 @@ public class ChangeStudentGradeAndClass
 			{
 			if(secondClassChoice==1)
 				{
-					
-				Runner.students.get(personChoice).setClass1(tempClass);
+				tempClass2 = Runner.students.get(personChoice).getClass1();
 				}
 			if(secondClassChoice==2)
 				{
-				Runner.students.get(personChoice).setClass2(tempClass);
+				tempClass2 = Runner.students.get(personChoice).getClass2();
 				}
 			if(secondClassChoice==3)
 				{
+				tempClass2 = Runner.students.get(personChoice).getClass3();
+				}
+			}
+		
+		
+		if(tempClass.equals(Runner.students.get(personChoice).getClass1()))
+			{
+			Runner.students.get(personChoice).setClass1(tempClass2);
+			if(tempClass.equals(Runner.students.get(personChoice).getClass2()))
+				{
+				Runner.students.get(personChoice).setClass2(tempClass);
+				}
+			if(tempClass.equals(Runner.students.get(personChoice).getClass3()))
+				{
 				Runner.students.get(personChoice).setClass3(tempClass);
+				}
+			}
+		if(tempClass.equals(Runner.students.get(personChoice).getClass2()))
+			{
+			Runner.students.get(personChoice).setClass2(tempClass2);
+			if(tempClass.equals(Runner.students.get(personChoice).getClass1()))
+				{
+				Runner.students.get(personChoice).setClass1(tempClass);
+				}
+			if(tempClass.equals(Runner.students.get(personChoice).getClass3()))
+				{
+				Runner.students.get(personChoice).setClass3(tempClass);
+				}
+			}
+		if(tempClass.equals(Runner.students.get(personChoice).getClass3()))
+			{
+			Runner.students.get(personChoice).setClass3(tempClass2);
+			if(tempClass.equals(Runner.students.get(personChoice).getClass1()))
+				{
+				Runner.students.get(personChoice).setClass1(tempClass);
+				}
+			if(tempClass.equals(Runner.students.get(personChoice).getClass2()))
+				{
+				Runner.students.get(personChoice).setClass2(tempClass);
 				}
 			}
 		}
 
 
-
+	
 
 
 

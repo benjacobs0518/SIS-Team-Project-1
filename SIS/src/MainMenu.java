@@ -45,7 +45,7 @@ public class MainMenu
 				else
 					{
 					System.out.println("Please enter a valid option");
-					showSubMenu1();
+					showSubMenu2();
 					}
 				}
 			public static void showSubMenu3()
