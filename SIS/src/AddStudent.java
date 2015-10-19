@@ -79,12 +79,18 @@ public class AddStudent
 			}
 	public static void deleteStudent()
 		{
+		int counter1=1;
+		for(Object fred:Runner.students)
+			{
+			System.out.println(counter1+") "+Runner.students.get(counter1-1).getfName()+" "+Runner.students.get(counter1-1).getlName());
+			counter1++;
+			}
 		int counter = Runner.students.size()-1;
 		Scanner userInput = new Scanner(System.in);
-		System.out.println("Based on a numerical value (from 0 to "+counter+"), please select the number of the student you'd like to delete.");
-		int deletedStudent = userInput.nextInt();
-		System.out.println("You are deleting: " + Runner.students.get(deletedStudent-1).getfName());
-		Runner.students.remove(deletedStudent-1);
+		System.out.println("Input the number of the student you'd like to delete");
+		int deletedStudent = userInput.nextInt()-1;
+		System.out.println("You are deleting: " + Runner.students.get(deletedStudent).getfName());
+		Runner.students.remove(deletedStudent);
 		System.out.println("Deletion complete, taking you back to the main menu");
 		MainMenu.displayMainMenu();
 		}

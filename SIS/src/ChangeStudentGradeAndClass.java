@@ -212,8 +212,6 @@ public class ChangeStudentGradeAndClass
 				tempClass2 = Runner.students.get(personChoice).getClass3();
 				}
 			}
-		System.out.println("TC2"+tempClass2);
-		
 		if(tempClass.equals(Runner.students.get(personChoice).getClass1()))
 			{
 			Runner.students.get(personChoice).setClass1(tempClass2);
