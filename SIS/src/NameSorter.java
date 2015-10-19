@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class LastName1 implements Comparator<Student>
+public class NameSorter implements Comparator<Student>
 	{
 		
 		
