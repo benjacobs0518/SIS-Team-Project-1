@@ -10,7 +10,6 @@ public class Runner
 		{
 		reader();
 		MainMenu.displayMainMenu();
-		
 		}
 	public static void reader() throws IOException
 		{
@@ -27,8 +26,6 @@ public class Runner
 			String grade3=file.next();
 			double GPA=0;
 			students.add(new Student(fName, lName, class1, grade1, class2, grade2, class3, grade3, GPA));
-	
+			}
 		}
 	}
-
-}

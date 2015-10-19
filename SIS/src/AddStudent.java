@@ -9,7 +9,9 @@ public class AddStudent
 	static ArrayList<String> classNamesEditted = new ArrayList<String>();
 	public static void main(String[] args) throws IOException
 		{
-		addStudent();
+			Runner.reader();
+		//addStudent();
+		deleteStudent();
 		}
 	public static void addStudent()
 		{
@@ -38,8 +40,36 @@ public class AddStudent
 		double inputGPA = userInput.nextDouble();
 		Runner.students.add(new Student(addedFirst, addedLast, classNames.get(period1Input-1), grade1Input, classNames.get(period2Input-1), grade2Input, classNames.get(period3Input-1), grade3Input, inputGPA));
 		}
-	publid static void deleteStudent()
-	{
-		
+	public static void deleteStudent()
+		{
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Based on a numerical value (up to 24), please select the number of the student you'd like to delete.");
+		int deletedStudent = userInput.nextInt();
+		System.out.println("You are deleting: " + Runner.students.get(deletedStudent-1).getfName());
+		Runner.students.remove(deletedStudent-1);
+		}
 	}
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
