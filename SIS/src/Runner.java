@@ -9,7 +9,7 @@ public class Runner
 	public static void main(String[] args) throws IOException
 		{
 		reader();
-		MainMenu.mainMenu();
+		MainMenu.displayMainMenu();
 		
 		}
 	public static void reader() throws IOException
