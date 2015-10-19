@@ -5,12 +5,19 @@ import java.util.Scanner;
 
 public class AddStudent
 	{
+	static String grade1Input;
+	static String grade2Input;
+	static String grade3Input;
+	static int period1Input;
+	static int period2Input;
+	static int period3Input;
+	static Scanner userInput = new Scanner(System.in);
+	static Scanner userInput1 = new Scanner(System.in);
+
 	static ArrayList<String> classNames = new ArrayList<String>();
-	static ArrayList<String> classNamesEditted = new ArrayList<String>();
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args)
 		{
-			Runner.reader();
-		//addStudent();
+		addStudent();
 		deleteStudent();
 		}
 	public static void addStudent()
@@ -18,28 +25,53 @@ public class AddStudent
 		classNames.add("Biology");
 		classNames.add("English");
 		classNames.add("Algebra");
-		Scanner userInput = new Scanner(System.in);
-		Scanner userInput1 = new Scanner(System.in);
 		System.out.println("Please input student first name.");
 		String addedFirst = userInput.nextLine();
 		System.out.println("Please input student last name.");
 		String addedLast = userInput.nextLine();
 		System.out.println("Please input (1) to select biology, (2) to select english, or (3) to select algebra.");
-		int period1Input = userInput.nextInt();
-		System.out.println("Input the grade for this class.");
-		String grade1Input = userInput1.nextLine();
+		period1Input = userInput.nextInt();
+		checkGrade1();
 		System.out.println("Please select the next class.");
-		int period2Input = userInput.nextInt();
-		System.out.println("Input the grade for this class.");
-		String grade2Input = userInput1.nextLine();
+		period2Input = userInput.nextInt();
+		checkGrade2();
 		System.out.println("Please select the next class.");
-		int period3Input = userInput.nextInt();
-		System.out.println("Please put in a grade for " + classNames.get(period3Input - 1));
-		String grade3Input = userInput1.nextLine();
+		period3Input = userInput.nextInt();
+		checkGrade3();
 		System.out.println("Input the students GPA.");
 		double inputGPA = userInput.nextDouble();
 		Runner.students.add(new Student(addedFirst, addedLast, classNames.get(period1Input-1), grade1Input, classNames.get(period2Input-1), grade2Input, classNames.get(period3Input-1), grade3Input, inputGPA));
 		}
+	public static void checkGrade1()
+		{
+		System.out.println("Input the grade for " + classNames.get(period1Input-1));
+		grade1Input = userInput1.nextLine();
+		if(grade1Input.length()>2)
+			{
+			System.out.println("Grade too long, change it to 2 or less letters or spaces");
+			checkGrade1();
+			}
+		}
+	public static void checkGrade2()
+		{
+		System.out.println("Input the grade for " + classNames.get(period2Input-1));
+		grade2Input = userInput1.nextLine();
+		if(grade2Input.length()>2)
+			{
+			System.out.println("Grade too long, change it to 2 or less letters or spaces");
+			checkGrade2();
+			}
+		}
+	public static void checkGrade3()
+		{
+		System.out.println("Input the grade for " + classNames.get(period3Input-1));
+		grade3Input = userInput1.nextLine();
+		if(grade3Input.length()>2)
+			{
+			System.out.println("Grade too long, change it to 2 or less letters or spaces");
+			checkGrade3();
+			}
+			}
 	public static void deleteStudent()
 		{
 		Scanner userInput = new Scanner(System.in);
@@ -49,27 +81,4 @@ public class AddStudent
 		Runner.students.remove(deletedStudent-1);
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
