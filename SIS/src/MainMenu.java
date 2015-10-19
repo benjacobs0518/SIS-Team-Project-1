@@ -14,22 +14,41 @@ public class MainMenu
 			System.out.println("    3) Sort students");
 			Scanner userInput = new Scanner(System.in);
 			int menuChoice=userInput.nextInt();
-			if(menuChoice==1)
-				showSubMenu1();
-			if(menuChoice==2)
-				showSubMenu2();
-			if(menuChoice==3)
-				showSubMenu3();
-			else
+			switch(menuChoice)
 				{
-				System.out.println("Please enter a valid option (1,2,3)");
-				displayMainMenu();
+				case 1:
+					showSubMenu1();
+					break;
+				case 2:
+					showSubMenu2();
+					break;
+				case 3:
+					showSubMenu3();
+					break;
+				default:
+					System.out.println("Please enter a valid option (1,2,3)");
+					displayMainMenu();
+					break;
 				}
 			}
 			public static void showSubMenu1()
 				{
+				Scanner userInput = new Scanner(System.in);
+				System.out.println("Would you like to:");
+				System.out.println("     1) Add a student");
+				System.out.println("     2) Remove a student");
+				subMenuChoice = userInput.nextInt();
+				if(subMenuChoice==1)
+					AddStudent.addStudent();
+				else if(subMenuChoice==2)
+					AddStudent.deleteStudent();
+				else
+					{
+					System.out.println("Please enter a valid option");
+					showSubMenu1();
+					}
+			}
 				
-				}
 				
 			public static void showSubMenu2()
 				{
@@ -52,8 +71,7 @@ public class MainMenu
 				{
 				if (menuChoice==3)
 					{
-						//go to menu for sorting students
-					}
+					}	
 				else
 					{
 						System.out.println("Please restart and input a valid operator.");
